@@ -19,11 +19,17 @@ assign {DS_A, DS_B, DS_C, DS_D, DS_E, DS_F, DS_G} = segments;
 *   Connect CLK to the input.
 */
 
+wire clock_out;
+
+clk_div #(.X(7)) div (.clk(CLK), .clk_out(clock_out));
+
 /*
 *   Problem 4/7:
 *   Make an instance of hex display driver (hex_display) here.
 *   Connect 'anodes', 'segments', 'data' to corresponding wires in current
 *   module.
 */
+
+hex_display hex_display(.clk(clock_out), .data(d), .anodes(anodes), .segments(segments));
 
 endmodule
