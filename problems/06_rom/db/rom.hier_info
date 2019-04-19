@@ -1,16 +1,16 @@
 |top
 CLK => CLK.IN2
-DS_EN1 <= hex_display:hd.anodes
-DS_EN2 <= hex_display:hd.anodes
-DS_EN3 <= hex_display:hd.anodes
-DS_EN4 <= hex_display:hd.anodes
-DS_A <= hex_display:hd.segments
-DS_B <= hex_display:hd.segments
-DS_C <= hex_display:hd.segments
-DS_D <= hex_display:hd.segments
-DS_E <= hex_display:hd.segments
-DS_F <= hex_display:hd.segments
-DS_G <= hex_display:hd.segments
+DS_EN1 << hex_display:hd.anodes
+DS_EN2 << hex_display:hd.anodes
+DS_EN3 << hex_display:hd.anodes
+DS_EN4 << hex_display:hd.anodes
+DS_A << hex_display:hd.segments
+DS_B << hex_display:hd.segments
+DS_C << hex_display:hd.segments
+DS_D << hex_display:hd.segments
+DS_E << hex_display:hd.segments
+DS_F << hex_display:hd.segments
+DS_G << hex_display:hd.segments
 
 
 |top|clk_div:clk_div
@@ -104,7 +104,6 @@ segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|rom_fetcher:rom_fetcher
-clk => rom:rom.clk
 clk => pc[0].CLK
 clk => pc[1].CLK
 clk => pc[2].CLK
@@ -113,25 +112,25 @@ clk => pc[4].CLK
 clk => pc[5].CLK
 clk => pc[6].CLK
 clk => pc[7].CLK
-q[0] <= rom:rom.q[0]
-q[1] <= rom:rom.q[1]
-q[2] <= rom:rom.q[2]
-q[3] <= rom:rom.q[3]
-q[4] <= rom:rom.q[4]
-q[5] <= rom:rom.q[5]
-q[6] <= rom:rom.q[6]
-q[7] <= rom:rom.q[7]
-q[8] <= rom:rom.q[8]
-q[9] <= rom:rom.q[9]
-q[10] <= rom:rom.q[10]
-q[11] <= rom:rom.q[11]
-q[12] <= rom:rom.q[12]
-q[13] <= rom:rom.q[13]
-q[14] <= rom:rom.q[14]
-q[15] <= rom:rom.q[15]
+q[0] <= rom_comb:rom_comb.q[0]
+q[1] <= rom_comb:rom_comb.q[1]
+q[2] <= rom_comb:rom_comb.q[2]
+q[3] <= rom_comb:rom_comb.q[3]
+q[4] <= rom_comb:rom_comb.q[4]
+q[5] <= rom_comb:rom_comb.q[5]
+q[6] <= rom_comb:rom_comb.q[6]
+q[7] <= rom_comb:rom_comb.q[7]
+q[8] <= rom_comb:rom_comb.q[8]
+q[9] <= rom_comb:rom_comb.q[9]
+q[10] <= rom_comb:rom_comb.q[10]
+q[11] <= rom_comb:rom_comb.q[11]
+q[12] <= rom_comb:rom_comb.q[12]
+q[13] <= rom_comb:rom_comb.q[13]
+q[14] <= rom_comb:rom_comb.q[14]
+q[15] <= rom_comb:rom_comb.q[15]
 
 
-|top|rom_fetcher:rom_fetcher|rom:rom
+|top|rom_fetcher:rom_fetcher|rom_comb:rom_comb
 addr[0] => mem.RADDR
 addr[1] => mem.RADDR1
 addr[2] => mem.RADDR2
@@ -140,45 +139,21 @@ addr[4] => ~NO_FANOUT~
 addr[5] => ~NO_FANOUT~
 addr[6] => ~NO_FANOUT~
 addr[7] => ~NO_FANOUT~
-addr[8] => ~NO_FANOUT~
-addr[9] => ~NO_FANOUT~
-addr[10] => ~NO_FANOUT~
-addr[11] => ~NO_FANOUT~
-addr[12] => ~NO_FANOUT~
-addr[13] => ~NO_FANOUT~
-addr[14] => ~NO_FANOUT~
-addr[15] => ~NO_FANOUT~
-clk => q[0]~reg0.CLK
-clk => q[1]~reg0.CLK
-clk => q[2]~reg0.CLK
-clk => q[3]~reg0.CLK
-clk => q[4]~reg0.CLK
-clk => q[5]~reg0.CLK
-clk => q[6]~reg0.CLK
-clk => q[7]~reg0.CLK
-clk => q[8]~reg0.CLK
-clk => q[9]~reg0.CLK
-clk => q[10]~reg0.CLK
-clk => q[11]~reg0.CLK
-clk => q[12]~reg0.CLK
-clk => q[13]~reg0.CLK
-clk => q[14]~reg0.CLK
-clk => q[15]~reg0.CLK
-q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[10] <= q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[11] <= q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[12] <= q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[13] <= q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[14] <= q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[15] <= q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= mem.DATAOUT
+q[1] <= mem.DATAOUT1
+q[2] <= mem.DATAOUT2
+q[3] <= mem.DATAOUT3
+q[4] <= mem.DATAOUT4
+q[5] <= mem.DATAOUT5
+q[6] <= mem.DATAOUT6
+q[7] <= mem.DATAOUT7
+q[8] <= mem.DATAOUT8
+q[9] <= mem.DATAOUT9
+q[10] <= mem.DATAOUT10
+q[11] <= mem.DATAOUT11
+q[12] <= mem.DATAOUT12
+q[13] <= mem.DATAOUT13
+q[14] <= mem.DATAOUT14
+q[15] <= mem.DATAOUT15
 
 

@@ -32,8 +32,8 @@ module rom_fetcher(
 reg [7:0]pc = 0;
 wire [7:0]pc_next = pc + 1;
 
-rom #(.WIDTH(16)) rom(.clk(clk), .addr(pc), .q(q));
-//rom_comb #(.WIDTH(16)) rom_comb(.addr(pc), .q(q));
+//rom #(.WIDTH(16)) rom(.clk(clk), .addr(pc), .q(q));
+rom_comb #(.WIDTH(16)) rom_comb(.addr(pc), .q(q));
 
 always @(posedge clk) begin
     pc <= pc_next;
