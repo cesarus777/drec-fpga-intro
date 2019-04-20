@@ -15,14 +15,6 @@ wire mem_we;
 *   Problem 4:
 *   Instantiate memory controller here
 */
-mem_ctrl mem_ctrl(
-    .clk(clk),
-	 .addr(mem_addr),
-	 .data(mem_data),
-	 .we(mem_we),
-	 .data_out(data_out)
-);
-
 
 core core(
     .clk(clk),

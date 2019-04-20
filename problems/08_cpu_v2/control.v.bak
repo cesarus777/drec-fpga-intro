@@ -88,7 +88,7 @@ always @(*) begin
         17'b?????_??_010_0100011: begin // SW
             rf_we = 1'b1;
             alu_op = 3'b001;
-            imm12 = {instr[31:25],instr[11:7]};
+            imm12 = instr[31:25];
             has_imm = 1'b1;
             mem_we = 1'b1;
         end

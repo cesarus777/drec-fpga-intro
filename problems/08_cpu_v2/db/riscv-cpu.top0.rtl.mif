@@ -1,0 +1,16 @@
+WIDTH=3;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	0 : 010;
+	1 : 110;
+	2 : 111;
+	3 : 000;
+	4 : 101;
+	5 : 000;
+	6 : 000;
+	7 : 000;
+END;

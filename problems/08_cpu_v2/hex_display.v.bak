@@ -42,7 +42,7 @@ always @(*) begin
         4'hB: segments = 7'b0011111;
         4'hC: segments = 7'b1001110;
         4'hD: segments = 7'b0111101;
-        4'hE: segments = 7'b1001111;
+        4'hE: segments = 7'b1101111;
         4'hF: segments = 7'b1000111;
     endcase
 end

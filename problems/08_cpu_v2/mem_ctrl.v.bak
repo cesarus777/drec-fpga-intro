@@ -7,17 +7,15 @@ module mem_ctrl(
     output reg [15:0]data_out = 16'b0
 );
 
-wire [31:0]data_in = data;
-wire [15:0]ldata = data_in[15:0];
-
 always @(posedge clk) begin
 /*
 *   Problem 4:
 *   Drive 'data_out' register here
 */
-    if (we) begin
-		      data_out <= ldata;
-	 end
+    if (we) begin 
+        
+        [15:0]data_out <= [15:0]data;
+    end
 end
 
 endmodule

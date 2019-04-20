@@ -14,8 +14,8 @@ module core(
 *   Make appropriate connections for memory address,
 *   data and write-enable signal
 */
-assign mem_addr = alu_result;
-assign mem_data = rf_rdata1;
+wire [31:0]mem_addr = alu_result;
+wire [31:0]mem_data = rf_rdata1;
 
 reg [31:0]pc = 32'hFFFFFFFF;
 wire [31:0]pc_next = (pc == last_pc) ? pc : pc + 1;

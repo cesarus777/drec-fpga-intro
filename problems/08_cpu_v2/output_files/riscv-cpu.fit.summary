@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Apr 20 17:21:36 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : riscv-cpu
+Top-level Entity Name : top
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 413 / 6,272 ( 7 % )
+    Total combinational functions : 353 / 6,272 ( 6 % )
+    Dedicated logic registers : 261 / 6,272 ( 4 % )
+Total registers : 261
+Total pins : 12 / 92 ( 13 % )
+Total virtual pins : 0
+Total memory bits : 24 / 276,480 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
